@@ -93,11 +93,11 @@ async def run_steps(page, steps, phone_number):
 
                 selector = get_selector(by, locator)
                 logging.info(f"{action.title()} element by [{by}] with locator [{locator}]")
-                await page.locator(selector).wait_for(timeout=wait_time * 5000)
+                await page.locator(selector).wait_for(timeout=wait_time * 2000)
 
                 if action == 'click':
                     await page.click(selector)
-                    time.sleep(10)
+                    time.sleep(0.6)
                 elif action == 'send_keys':
                     await human_type(page, selector, phone_number)
 
@@ -130,14 +130,15 @@ async def run_site(context, site_key, site_data, phone_number):
         logging.info(f"Finished automation for site: {site_key}")
 
 
-async def main(run_mode='parallel', phone_number='xxxxxx'):
+async def main(run_mode='parallel', phone_number='xxxxxxxxx'):
     config = load_config()
 
     async with async_playwright() as playwright:
-        browser = await playwright.chromium.launch(headless=False)
+        browser = await playwright.chromium.launch(headless=True)
         context = await browser.new_context(
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
-            viewport={"width": 1280, "height": 800},
+            # viewport={"width": 1280, "height": 800},
+            viewport=None,
             locale="en-IN"
         )
 
@@ -158,4 +159,5 @@ async def main(run_mode='parallel', phone_number='xxxxxx'):
 
 
 if __name__ == "__main__":
-    asyncio.run(main(run_mode='sequential'))  # or 'parallel'
+    for i in range(0,10):
+        asyncio.run(main(run_mode='parallel'))  # or 'parallel'
