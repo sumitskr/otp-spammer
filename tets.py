@@ -130,7 +130,7 @@ async def run_site(context, site_key, site_data, phone_number):
         logging.info(f"Finished automation for site: {site_key}")
 
 
-async def main(run_mode='parallel', phone_number='6291021988'):
+async def main(run_mode='parallel', phone_number='xxxxxx'):
     config = load_config()
 
     async with async_playwright() as playwright:
