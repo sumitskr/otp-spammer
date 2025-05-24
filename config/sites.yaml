@@ -1,0 +1,141 @@
+rummy_circle:
+ steps:
+   - action: open_url
+     url: "https://www.rummycircle.com/"
+   - action: send_keys
+     by: id
+     locator: "mobile_input"
+     wait: 5
+   - action: click
+     by: id
+     locator: "getStarted"
+     wait: 5
+
+oyo:
+ steps:
+   - action: open_url
+     url: "https://www.oyorooms.com/"
+   - action: click
+     by: xpath
+     locator: '//*[@id="root"]/div/div[3]/div[1]/div[1]/div/div[2]/div[6]/div[1]/div[2]/div'
+     wait: 5
+   - action: send_keys
+     by: xpath
+     locator: '/html/body/div[1]/div/div[3]/div/div/div/div/div/div[2]/div[2]/div[2]/div[1]/div/div[3]/input'
+     wait: 5
+   - action: click
+     by: xpath
+     locator: '//*[@id="root"]/div/div[3]/div/div/div/div/div/div[2]/div[2]/div[2]/div[1]/div/button'
+     wait: 5
+
+spotify:
+ steps:
+   - action: open_url
+     url: "https://accounts.spotify.com/en/login/phone?continue=https%3A%2F%2Fopen.spotify.com%2F&flow_ctx=1a8ff37f-57f7-4949-b7f7-43b9db512b9d:1748120514"
+   - action: send_keys
+     by: id
+     locator: 'phonelogin-phonenumber'
+     wait: 5
+   - action: click
+     by: xpath
+     locator: '//*[@id="phonelogin-button"]/span[1]/span'
+     wait: 5
+
+mmt:
+ steps:
+   - action: open_url
+     url: 'https://www.makemytrip.com/'
+   - action: send_keys
+     by: xpath
+     locator: '//*[@id="SW"]/div[1]/div[2]/div[2]/div/section/form/div[1]/div/input'
+     wait: 5
+   - action: click
+     by: xpath
+     locator: '//*[@id="SW"]/div[1]/div[2]/div[2]/div/section/form/div[2]/button'
+     wait: 5
+
+fabh:
+ steps:
+   - action: open_url
+     url: 'https://www.fabhotels.com/'
+   - action: click
+     by: xpath
+     locator: '/html/body/div[1]/div[1]/div/div[1]/div/div[2]/div[2]/button/span'
+     wait: 5
+   - action: send_keys
+     by: xpath
+     locator: '//*[@id="portal-modal"]/div/div/div/div/div[2]/div/div[1]/div[2]/input'
+     wait: 5
+   - action: click
+     by: xpath
+     locator: '//*[@id="portal-modal"]/div/div/div/div/div[2]/div/div[1]/div[4]/button'
+
+chatgpt:
+ steps:
+ - action: open_url
+   url: https://auth.openai.com/log-in?usernameKind=phone_number
+ - action: select_country_code
+   country_code_text: IN
+ - action: send_keys
+   by: xpath
+   locator: '//*[@id="tel"]'
+   wait: 5
+ - action: click
+   by: xpath
+   locator: '//*[@id=":r1:"]/div[2]/button'
+
+facebook:
+  steps:
+  - action: open_url
+    url: 'https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0'
+  - action: send_keys
+    by: xpath
+    locator: '//*[@id="identify_email"]'
+  - action: click
+    by: xpath
+    locator: '//*[@id="did_submit"]'
+instagram:
+ steps:
+ - action: open_url
+   url: 'https://www.instagram.com/accounts/password/reset/'
+ - action: send_keys
+   by: name
+   locator: cppEmailOrUsername
+   wait: 5
+ - action: click
+   by: css
+   locator: 'div[role="button"]:has-text("Send login link")'
+   wait: 5
+
+fancode:
+ steps:
+   - action: open_url
+     url: 'https://www.fancode.com/'
+   - action: click
+     by: xpath
+     locator: /html/body/div[1]/header/div[3]/div[2]/div/div
+     wait: 5
+   - action: send_keys
+     by: xpath
+     locator: //*[@id="fc-web-app"]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/input
+     wait: 5
+   - action: click
+     by: xpath
+     locator: //*[@id="fc-web-app"]/div[2]/div/div[2]/div/div/div[2]/div/div[2]
+     wait: 5
+
+zerodha:
+ steps:
+   - action: open_url
+     url: https://zerodha.com/
+   - action: click
+     by: id
+     locator: acop_link
+   - action: send_keys
+     by: id
+     locator: user_mobile
+     wait: 5
+   - action: click
+     by: xpath
+     locator: //button[@id="open_account_proceed_form" and contains(., "Get OTP")]
+     wait: 5
